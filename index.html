@@ -13,158 +13,257 @@
 }
 
 body{
-    background: linear-gradient(to bottom,#050505,#101626);
-    color:white;
-    font-family: 'Segoe UI', sans-serif;
-    overflow:hidden;
-    height:100vh;
+    font-family: "Segoe UI", sans-serif;
+    background: #05070d;
+    color: white;
+    overflow-x:hidden;
+    min-height:100vh;
 }
 
-.stars{
+.sky{
     position:fixed;
-    width:100%;
-    height:100%;
-    background-image:
-        radial-gradient(white 1px, transparent 1px);
-    background-size:40px 40px;
-    opacity:0.3;
-    animation: twinkle 5s infinite alternate;
+    inset:0;
+    background:
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.12), transparent 120px),
+    linear-gradient(to bottom,#04060b,#0d1321);
+    z-index:-3;
 }
 
-@keyframes twinkle{
-    from{opacity:0.2}
-    to{opacity:0.5}
+.moon{
+    position:fixed;
+    top:60px;
+    right:80px;
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    background:#f6f0d7;
+    box-shadow:0 0 60px rgba(255,255,255,0.4);
+    z-index:-2;
 }
 
-.container{
-    position:relative;
-    z-index:2;
+.fog{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+    animation:fogMove 20s linear infinite;
+    z-index:-1;
+}
+
+@keyframes fogMove{
+    from{transform:translateX(-10%);}
+    to{transform:translateX(10%);}
+}
+
+.start-screen{
     height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
+    flex-direction:column;
     text-align:center;
-    padding:25px;
+    padding:30px;
 }
 
-.card{
-    max-width:700px;
-    backdrop-filter: blur(8px);
+.start-screen h2{
+    margin-bottom:15px;
+    font-weight:300;
+}
+
+.open-btn{
+    margin-top:25px;
+    padding:14px 28px;
+    border:none;
+    border-radius:999px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.hidden{
+    display:none;
+}
+
+.letter-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+.letter{
+    width:100%;
+    max-width:760px;
     background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
     border:1px solid rgba(255,255,255,0.1);
-    border-radius:20px;
+    border-radius:24px;
     padding:40px;
-    box-shadow:0 0 30px rgba(255,255,255,0.08);
+    box-shadow:0 0 40px rgba(255,255,255,0.05);
 }
 
-h1{
-    font-size:3rem;
-    margin-bottom:20px;
+.title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:30px;
 }
 
 .line{
     opacity:0;
     transform:translateY(20px);
-    animation:fadeUp 1s forwards;
+    animation:appear 1s forwards;
+    margin:18px 0;
+    line-height:1.8;
+    font-size:18px;
 }
 
-.line:nth-child(2){animation-delay:1s;}
-.line:nth-child(3){animation-delay:2.5s;}
-.line:nth-child(4){animation-delay:4s;}
-.line:nth-child(5){animation-delay:5.5s;}
-.line:nth-child(6){animation-delay:7s;}
+.line:nth-child(2){animation-delay:0.5s;}
+.line:nth-child(3){animation-delay:2s;}
+.line:nth-child(4){animation-delay:3.5s;}
+.line:nth-child(5){animation-delay:5s;}
+.line:nth-child(6){animation-delay:6.5s;}
+.line:nth-child(7){animation-delay:8s;}
+.line:nth-child(8){animation-delay:9.5s;}
+.line:nth-child(9){animation-delay:11s;}
+.line:nth-child(10){animation-delay:12.5s;}
 
-@keyframes fadeUp{
+@keyframes appear{
     to{
         opacity:1;
         transform:translateY(0);
     }
 }
 
-.date{
+.info{
     margin-top:25px;
-    font-size:1.3rem;
-    font-weight:bold;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.15);
 }
 
-.button{
+.info p{
+    margin:10px 0;
+}
+
+.join-btn{
     display:inline-block;
-    margin-top:25px;
-    padding:12px 25px;
-    border-radius:999px;
-    background:white;
-    color:black;
+    margin-top:30px;
     text-decoration:none;
+    color:black;
+    background:white;
+    padding:15px 28px;
+    border-radius:999px;
     font-weight:bold;
-    transition:0.3s;
+    transition:.3s;
 }
 
-.button:hover{
+.join-btn:hover{
     transform:scale(1.05);
 }
 
-.moon{
-    position:absolute;
-    top:10%;
-    right:10%;
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    background:#fff5d6;
-    box-shadow:0 0 50px #fff5d6;
+.footer-note{
+    margin-top:20px;
+    font-size:14px;
+    opacity:.7;
+}
+
+@media(max-width:600px){
+
+.title{
+    font-size:30px;
+}
+
+.letter{
+    padding:25px;
+}
+
+.line{
+    font-size:16px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<div class="stars"></div>
+<div class="sky"></div>
 <div class="moon"></div>
+<div class="fog"></div>
 
-<div class="container">
-    <div class="card">
+<section class="start-screen" id="start">
+    <h2>Bạn nhận được một lá thư.</h2>
+    <p>Không ghi người gửi.</p>
+    <p>Chỉ ghi một địa điểm và một thời khắc.</p>
 
-        <h1>🌕 Đêm Cuối Tháng</h1>
+    <button class="open-btn" onclick="openLetter()">
+        📜 Mở thư
+    </button>
+</section>
+
+<section class="letter-section hidden" id="letterSection">
+    <div class="letter">
+
+        <h1 class="title">🌕 ĐÊM CUỐI THÁNG</h1>
 
         <p class="line">
-            Có một lời triệu tập vừa được gửi đến bạn...
+            Khi đồng hồ điểm 22:00.
         </p>
 
         <p class="line">
-            Vào đêm ngày 03 tháng 07, khi trăng lên cao,
-            một ngôi làng nhỏ sẽ mở cửa đón những vị khách đặc biệt.
+            Vào đêm ngày 03 tháng 07.
         </p>
 
         <p class="line">
-            Trong số họ sẽ có Dân Làng.
+            Một ngôi làng nhỏ sẽ thức giấc.
+        </p>
+
+        <p class="line">
+            Trong số những người có mặt sẽ có Dân Làng.
+        </p>
+
+        <p class="line">
             Có Tiên Tri.
-            Và biết đâu... có cả Ma Sói.
         </p>
 
         <p class="line">
-            Đừng lo.
-            Khả năng bạn bị treo cổ oan ngay vòng đầu là không quá cao.
+            Có Kẻ Săn.
         </p>
 
         <p class="line">
-            Nhưng nếu từ chối tham gia,
-            mọi người chắc chắn sẽ nghi ngờ bạn là Ma Sói.
+            Và có thể...
         </p>
 
-        <p class="line date">
-            📅 03 / 07
+        <p class="line">
+            Một con Sói đang ẩn mình trong bóng tối.
         </p>
 
-        <p class="line" style="margin-top:15px;">
-            Chúng tôi chờ bạn xuất hiện.
+        <p class="line">
+            Nếu nhận được lá thư này, bạn đã được chọn.
         </p>
 
-        <a class="button" href="#">
-            🐺 Tôi sẽ tham gia
+        <div class="info">
+            <p>📅 03 / 07</p>
+            <p>🕙 22:00</p>
+            <p>📍 Làng Hờ La</p>
+            <p>🔥 10 chiếc ghế quanh đống lửa</p>
+        </div>
+
+        <a href="#" class="join-btn">
+            🐺 Tôi sẽ có mặt tại Làng Hờ La
         </a>
 
+        <div class="footer-note">
+            Vắng mặt sẽ tự động được xếp vào danh sách đối tượng đáng ngờ.
+        </div>
+
     </div>
-</div>
+</section>
+
+<script>
+function openLetter(){
+    document.getElementById("start").classList.add("hidden");
+    document.getElementById("letterSection").classList.remove("hidden");
+}
+</script>
 
 </body>
 </html>
