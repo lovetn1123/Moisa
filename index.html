@@ -4,154 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Đêm Cuối Tháng</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:Segoe UI,sans-serif;
-  background:#05070d;
-  color:#fff;
-  overflow:hidden;
-}
-.scene{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  text-align:center;
-  padding:20px;
-}
-.bg{
-  position:fixed;inset:0;
-  background:linear-gradient(to bottom,#020305,#0c1220);
-}
-.moon{
-  position:fixed;
-  top:8%;
-  right:8%;
-  width:160px;height:160px;border-radius:50%;
-  background:#f3edd1;
-  box-shadow:0 0 70px rgba(255,255,255,.4);
-}
-.fog{
-  position:fixed;inset:0;
-  background:radial-gradient(circle,rgba(255,255,255,.06),transparent 60%);
-  animation:fog 18s linear infinite alternate;
-}
-@keyframes fog{
-  from{transform:translateX(-5%)}
-  to{transform:translateX(5%)}
-}
-.fadeText{
-  opacity:0;
-  animation:show 2s forwards;
-  font-size:clamp(20px,3vw,32px);
-}
-.delay2{animation-delay:2.5s}
-@keyframes show{
-  to{opacity:1}
-}
-#envelope{
-  margin-top:40px;
-  cursor:pointer;
-  opacity:0;
-  animation:show 2s forwards;
-  animation-delay:5s;
-  font-size:80px;
-}
-.hidden{display:none}
-.letterWrap{
-  height:100vh;
-  overflow:auto;
-  padding:40px 20px;
-}
-.letter{
-  max-width:800px;
-  margin:40px auto;
-  background:rgba(255,255,255,.06);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:24px;
-  padding:40px;
-}
-h1{text-align:center;margin-bottom:25px}
-.line{
-  opacity:0;
-  transform:translateY(10px);
-  animation:appear 1s forwards;
-  line-height:1.9;
-  margin:16px 0;
-}
-@keyframes appear{
-  to{opacity:1;transform:translateY(0)}
-}
-.info{
-  margin-top:24px;
-  border-top:1px solid rgba(255,255,255,.15);
-  padding-top:18px;
-}
-.btn{
-  display:inline-block;
-  margin-top:25px;
-  text-decoration:none;
-  background:#fff;
-  color:#000;
-  padding:14px 24px;
-  border-radius:999px;
-  font-weight:bold;
-}
-.note{
-  margin-top:14px;
-  opacity:.7;
-  font-size:14px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="bg"></div>
-<div class="moon"></div>
-<div class="fog"></div>
-
-<div id="intro" class="scene">
-  <div class="fadeText">Có người đang tìm kiếm bạn.</div>
-  <div class="fadeText delay2">Và họ đã tìm thấy.</div>
-  <div id="envelope" onclick="openLetter()">📜</div>
+<div id="scene1" class="scene active">
+  <div class="moon"></div>
+  <div class="eyes">👁 👁 👁 👁 👁</div>
+  <h1>Rừng Hờ La</h1>
+  <p>Một điều gì đó đang quan sát bạn...</p>
 </div>
 
-<div id="letter" class="letterWrap hidden">
-  <div class="letter">
-    <h1>🌕 ĐÊM CUỐI THÁNG</h1>
+<div id="scene2" class="scene">
+  <div class="arrow">🏹</div>
+  <div id="letter">📜</div>
+  <p>Nhấn vào lá thư</p>
+</div>
 
-    <p class="line" style="animation-delay:.5s">Khi đồng hồ điểm 22:00...</p>
-    <p class="line" style="animation-delay:2s">Vào đêm ngày 03 tháng 07.</p>
-    <p class="line" style="animation-delay:3.5s">Một ngôi làng nhỏ sẽ thức giấc.</p>
-    <p class="line" style="animation-delay:5s">Trong số những người có mặt sẽ có Dân Làng.</p>
-    <p class="line" style="animation-delay:6.5s">Có Tiên Tri.</p>
-    <p class="line" style="animation-delay:8s">Có Kẻ Săn.</p>
-    <p class="line" style="animation-delay:9.5s">Và có thể...</p>
-    <p class="line" style="animation-delay:11s">Một con Sói đang ẩn mình trong bóng tối.</p>
-    <p class="line" style="animation-delay:12.5s">Nếu nhận được lá thư này, bạn đã được chọn.</p>
-
-    <div class="info">
-      <p>📍 Làng Hờ La</p>
-      <p>📅 03 / 07</p>
-      <p>🕙 22:00</p>
-      <p>🔥 10 chiếc ghế quanh đống lửa</p>
-    </div>
-
-    <a href="#" class="btn">🐺 Tôi sẽ có mặt tại Làng Hờ La</a>
-
-    <div class="note">
-      Vắng mặt sẽ tự động được xếp vào danh sách đối tượng đáng ngờ.
-    </div>
+<div id="scene3" class="scene">
+  <div class="paper">
+    <h1>🌕 Đêm Cuối Tháng</h1>
+    <p>Khi thời gian điểm 22 giờ đêm ngày 03 tháng 07 này...</p>
+    <p>Bạn đã được triệu hồi tới Làng Hờ La 32.</p>
+    <p>Để tham dự một bữa tiệc trăng máu.</p>
+    <p>Nếu từ chối, Ma Sói sẽ nuốt chửng bạn.</p>
+    <button onclick="fear()">😱 Tôi sợ lắm</button>
+    <button onclick="join()">😎 Đi thì đi</button>
   </div>
 </div>
 
-<script>
-function openLetter(){
-  document.getElementById('intro').classList.add('hidden');
-  document.getElementById('letter').classList.remove('hidden');
-}
-</script>
+<div id="fearScene" class="scene">
+  <div class="claw">🐾🐾🐾</div>
+  <h1>Quá muộn rồi...</h1>
+</div>
+
+<div id="campScene" class="scene">
+  <div class="fire">🔥</div>
+  <h1>Hẹn gặp bạn tại Làng Hờ La 32</h1>
+  <p>03/07 • 22:00</p>
+  <small>Những người vắng mặt thường là đối tượng bị nghi ngờ đầu tiên.</small>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
