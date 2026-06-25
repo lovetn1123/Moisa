@@ -4,266 +4,154 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Đêm Cuối Tháng</title>
-
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-    font-family: "Segoe UI", sans-serif;
-    background: #05070d;
-    color: white;
-    overflow-x:hidden;
-    min-height:100vh;
+  font-family:Segoe UI,sans-serif;
+  background:#05070d;
+  color:#fff;
+  overflow:hidden;
 }
-
-.sky{
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.12), transparent 120px),
-    linear-gradient(to bottom,#04060b,#0d1321);
-    z-index:-3;
+.scene{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
 }
-
+.bg{
+  position:fixed;inset:0;
+  background:linear-gradient(to bottom,#020305,#0c1220);
+}
 .moon{
-    position:fixed;
-    top:60px;
-    right:80px;
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    background:#f6f0d7;
-    box-shadow:0 0 60px rgba(255,255,255,0.4);
-    z-index:-2;
+  position:fixed;
+  top:8%;
+  right:8%;
+  width:160px;height:160px;border-radius:50%;
+  background:#f3edd1;
+  box-shadow:0 0 70px rgba(255,255,255,.4);
 }
-
 .fog{
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
-    animation:fogMove 20s linear infinite;
-    z-index:-1;
+  position:fixed;inset:0;
+  background:radial-gradient(circle,rgba(255,255,255,.06),transparent 60%);
+  animation:fog 18s linear infinite alternate;
 }
-
-@keyframes fogMove{
-    from{transform:translateX(-10%);}
-    to{transform:translateX(10%);}
+@keyframes fog{
+  from{transform:translateX(-5%)}
+  to{transform:translateX(5%)}
 }
-
-.start-screen{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-    padding:30px;
+.fadeText{
+  opacity:0;
+  animation:show 2s forwards;
+  font-size:clamp(20px,3vw,32px);
 }
-
-.start-screen h2{
-    margin-bottom:15px;
-    font-weight:300;
+.delay2{animation-delay:2.5s}
+@keyframes show{
+  to{opacity:1}
 }
-
-.open-btn{
-    margin-top:25px;
-    padding:14px 28px;
-    border:none;
-    border-radius:999px;
-    cursor:pointer;
-    font-size:16px;
+#envelope{
+  margin-top:40px;
+  cursor:pointer;
+  opacity:0;
+  animation:show 2s forwards;
+  animation-delay:5s;
+  font-size:80px;
 }
-
-.hidden{
-    display:none;
+.hidden{display:none}
+.letterWrap{
+  height:100vh;
+  overflow:auto;
+  padding:40px 20px;
 }
-
-.letter-section{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px 20px;
-}
-
 .letter{
-    width:100%;
-    max-width:760px;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:24px;
-    padding:40px;
-    box-shadow:0 0 40px rgba(255,255,255,0.05);
+  max-width:800px;
+  margin:40px auto;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:24px;
+  padding:40px;
 }
-
-.title{
-    text-align:center;
-    font-size:42px;
-    margin-bottom:30px;
-}
-
+h1{text-align:center;margin-bottom:25px}
 .line{
-    opacity:0;
-    transform:translateY(20px);
-    animation:appear 1s forwards;
-    margin:18px 0;
-    line-height:1.8;
-    font-size:18px;
+  opacity:0;
+  transform:translateY(10px);
+  animation:appear 1s forwards;
+  line-height:1.9;
+  margin:16px 0;
 }
-
-.line:nth-child(2){animation-delay:0.5s;}
-.line:nth-child(3){animation-delay:2s;}
-.line:nth-child(4){animation-delay:3.5s;}
-.line:nth-child(5){animation-delay:5s;}
-.line:nth-child(6){animation-delay:6.5s;}
-.line:nth-child(7){animation-delay:8s;}
-.line:nth-child(8){animation-delay:9.5s;}
-.line:nth-child(9){animation-delay:11s;}
-.line:nth-child(10){animation-delay:12.5s;}
-
 @keyframes appear{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+  to{opacity:1;transform:translateY(0)}
 }
-
 .info{
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,0.15);
+  margin-top:24px;
+  border-top:1px solid rgba(255,255,255,.15);
+  padding-top:18px;
 }
-
-.info p{
-    margin:10px 0;
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  text-decoration:none;
+  background:#fff;
+  color:#000;
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:bold;
 }
-
-.join-btn{
-    display:inline-block;
-    margin-top:30px;
-    text-decoration:none;
-    color:black;
-    background:white;
-    padding:15px 28px;
-    border-radius:999px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.join-btn:hover{
-    transform:scale(1.05);
-}
-
-.footer-note{
-    margin-top:20px;
-    font-size:14px;
-    opacity:.7;
-}
-
-@media(max-width:600px){
-
-.title{
-    font-size:30px;
-}
-
-.letter{
-    padding:25px;
-}
-
-.line{
-    font-size:16px;
-}
+.note{
+  margin-top:14px;
+  opacity:.7;
+  font-size:14px;
 }
 </style>
 </head>
-
 <body>
-
-<div class="sky"></div>
+<div class="bg"></div>
 <div class="moon"></div>
 <div class="fog"></div>
 
-<section class="start-screen" id="start">
-    <h2>Bạn nhận được một lá thư.</h2>
-    <p>Không ghi người gửi.</p>
-    <p>Chỉ ghi một địa điểm và một thời khắc.</p>
+<div id="intro" class="scene">
+  <div class="fadeText">Có người đang tìm kiếm bạn.</div>
+  <div class="fadeText delay2">Và họ đã tìm thấy.</div>
+  <div id="envelope" onclick="openLetter()">📜</div>
+</div>
 
-    <button class="open-btn" onclick="openLetter()">
-        📜 Mở thư
-    </button>
-</section>
+<div id="letter" class="letterWrap hidden">
+  <div class="letter">
+    <h1>🌕 ĐÊM CUỐI THÁNG</h1>
 
-<section class="letter-section hidden" id="letterSection">
-    <div class="letter">
+    <p class="line" style="animation-delay:.5s">Khi đồng hồ điểm 22:00...</p>
+    <p class="line" style="animation-delay:2s">Vào đêm ngày 03 tháng 07.</p>
+    <p class="line" style="animation-delay:3.5s">Một ngôi làng nhỏ sẽ thức giấc.</p>
+    <p class="line" style="animation-delay:5s">Trong số những người có mặt sẽ có Dân Làng.</p>
+    <p class="line" style="animation-delay:6.5s">Có Tiên Tri.</p>
+    <p class="line" style="animation-delay:8s">Có Kẻ Săn.</p>
+    <p class="line" style="animation-delay:9.5s">Và có thể...</p>
+    <p class="line" style="animation-delay:11s">Một con Sói đang ẩn mình trong bóng tối.</p>
+    <p class="line" style="animation-delay:12.5s">Nếu nhận được lá thư này, bạn đã được chọn.</p>
 
-        <h1 class="title">🌕 ĐÊM CUỐI THÁNG</h1>
-
-        <p class="line">
-            Khi đồng hồ điểm 22:00.
-        </p>
-
-        <p class="line">
-            Vào đêm ngày 03 tháng 07.
-        </p>
-
-        <p class="line">
-            Một ngôi làng nhỏ sẽ thức giấc.
-        </p>
-
-        <p class="line">
-            Trong số những người có mặt sẽ có Dân Làng.
-        </p>
-
-        <p class="line">
-            Có Tiên Tri.
-        </p>
-
-        <p class="line">
-            Có Kẻ Săn.
-        </p>
-
-        <p class="line">
-            Và có thể...
-        </p>
-
-        <p class="line">
-            Một con Sói đang ẩn mình trong bóng tối.
-        </p>
-
-        <p class="line">
-            Nếu nhận được lá thư này, bạn đã được chọn.
-        </p>
-
-        <div class="info">
-            <p>📅 03 / 07</p>
-            <p>🕙 22:00</p>
-            <p>📍 Làng Hờ La</p>
-            <p>🔥 10 chiếc ghế quanh đống lửa</p>
-        </div>
-
-        <a href="#" class="join-btn">
-            🐺 Tôi sẽ có mặt tại Làng Hờ La
-        </a>
-
-        <div class="footer-note">
-            Vắng mặt sẽ tự động được xếp vào danh sách đối tượng đáng ngờ.
-        </div>
-
+    <div class="info">
+      <p>📍 Làng Hờ La</p>
+      <p>📅 03 / 07</p>
+      <p>🕙 22:00</p>
+      <p>🔥 10 chiếc ghế quanh đống lửa</p>
     </div>
-</section>
+
+    <a href="#" class="btn">🐺 Tôi sẽ có mặt tại Làng Hờ La</a>
+
+    <div class="note">
+      Vắng mặt sẽ tự động được xếp vào danh sách đối tượng đáng ngờ.
+    </div>
+  </div>
+</div>
 
 <script>
 function openLetter(){
-    document.getElementById("start").classList.add("hidden");
-    document.getElementById("letterSection").classList.remove("hidden");
+  document.getElementById('intro').classList.add('hidden');
+  document.getElementById('letter').classList.remove('hidden');
 }
 </script>
-
 </body>
 </html>
