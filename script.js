@@ -5,10 +5,15 @@ function showScene(id) {
     document.getElementById(id).classList.add("active");
 }
 
-// Hiện Scene 1
+// Bắt đầu với Scene 1
 showScene("scene1");
 
-// Sau 8 giây chuyển sang Scene 2
+// Sau 8 giây sang Scene 2
 setTimeout(() => {
     showScene("scene2");
 }, 8000);
+
+// Bấm vào Scene 2 để mở Scene 3
+document.getElementById("scene2").addEventListener("click", () => {
+    showScene("scene3");
+});
