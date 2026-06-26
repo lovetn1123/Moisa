@@ -56,3 +56,12 @@ html,body{
     }
 
 }
+/* Zoom khi mở thư */
+.scene.zoom img{
+    transform:scale(1.08);
+    transition:transform .4s ease;
+}
+
+.scene img{
+    transition:transform .4s ease;
+}
