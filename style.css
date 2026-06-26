@@ -226,3 +226,28 @@ html,body{
     }
 
 }
+#storyText{
+    position:absolute;
+    top:18%;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:80%;
+
+    text-align:center;
+
+    color:#e8e2d5;
+    font-family:"Marcellus", serif;
+    font-size:30px;
+    line-height:1.8;
+    letter-spacing:1px;
+
+    text-shadow:0 0 12px rgba(0,0,0,.8);
+
+    opacity:0;
+    transition:opacity .8s ease;
+}
+
+#storyText.show{
+    opacity:1;
+}
