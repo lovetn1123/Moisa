@@ -147,3 +147,63 @@ button{
         opacity:1;
     }
 }
+/* ===== Cinematic Layers ===== */
+
+#cinematic{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:5;
+}
+
+#fog{
+    position:absolute;
+    inset:-20%;
+    background:
+        radial-gradient(circle at 20% 40%, rgba(255,255,255,.12), transparent 35%),
+        radial-gradient(circle at 80% 60%, rgba(255,255,255,.10), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,.08), transparent 45%);
+    filter:blur(35px);
+    animation:fogMove 25s linear infinite;
+}
+
+@keyframes fogMove{
+
+    0%{
+        transform:translateX(-8%) translateY(2%);
+    }
+
+    50%{
+        transform:translateX(6%) translateY(-2%);
+    }
+
+    100%{
+        transform:translateX(-8%) translateY(2%);
+    }
+
+}
+
+#cloud{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.78) 0%,
+        rgba(0,0,0,.40) 25%,
+        transparent 60%
+    );
+    animation:cloudReveal 10s ease forwards;
+}
+
+@keyframes cloudReveal{
+
+    from{
+        opacity:1;
+    }
+
+    to{
+        opacity:0;
+    }
+
+}
