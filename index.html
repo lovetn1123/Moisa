@@ -1,48 +1,64 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Đêm Cuối Tháng</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đêm Cuối Tháng | Làng Hờ La 32</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/animation.css">
 </head>
+
 <body>
-<div id="scene1" class="scene active">
-  <div class="moon"></div>
-  <div class="eyes">👁 👁 👁 👁 👁</div>
-  <h1>Rừng Hờ La</h1>
-  <p>Một điều gì đó đang quan sát bạn...</p>
-</div>
 
-<div id="scene2" class="scene">
-  <div class="arrow">🏹</div>
-  <div id="letter">📜</div>
-  <p>Nhấn vào lá thư</p>
-</div>
+    <!-- Scene 1 -->
+    <section id="scene1" class="scene active">
+        <img src="assets/scene1.jpg" alt="Rừng đêm">
+    </section>
 
-<div id="scene3" class="scene">
-  <div class="paper">
-    <h1>🌕 Đêm Cuối Tháng</h1>
-    <p>Khi thời gian điểm 22 giờ đêm ngày 03 tháng 07 này...</p>
-    <p>Bạn đã được triệu hồi tới Làng Hờ La 32.</p>
-    <p>Để tham dự một bữa tiệc trăng máu.</p>
-    <p>Nếu từ chối, Ma Sói sẽ nuốt chửng bạn.</p>
-    <button onclick="fear()">😱 Tôi sợ lắm</button>
-    <button onclick="join()">😎 Đi thì đi</button>
-  </div>
-</div>
+    <!-- Scene 2 -->
+    <section id="scene2" class="scene">
+        <img src="assets/scene2.jpg" alt="Mũi tên">
+    </section>
 
-<div id="fearScene" class="scene">
-  <div class="claw">🐾🐾🐾</div>
-  <h1>Quá muộn rồi...</h1>
-</div>
+    <!-- Scene 3 -->
+    <section id="scene3" class="scene">
+        <img src="assets/scene3.jpg" alt="Lá thư">
 
-<div id="campScene" class="scene">
-  <div class="fire">🔥</div>
-  <h1>Hẹn gặp bạn tại Làng Hờ La 32</h1>
-  <p>03/07 • 22:00</p>
-  <small>Những người vắng mặt thường là đối tượng bị nghi ngờ đầu tiên.</small>
-</div>
-<script src="script.js"></script>
+        <div id="letterText">
+            <h1>Đêm Cuối Tháng</h1>
+
+            <p id="typing"></p>
+
+            <div id="choices">
+                <button id="fearBtn">😰 Tôi sợ lắm</button>
+                <button id="joinBtn">😎 Đi thì đi</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scene 4 -->
+    <section id="scene4" class="scene">
+        <img src="assets/scene4.jpg" alt="Móng vuốt">
+    </section>
+
+    <!-- Scene 5 -->
+    <section id="scene5" class="scene">
+        <img src="assets/scene5.jpg" alt="Đống lửa">
+
+        <div id="ending">
+            <h1>Hẹn gặp bạn tại Làng Hờ La 32</h1>
+
+            <h2>03 / 07 • 22:00</h2>
+
+            <p>Đừng đến trễ... hoặc đừng đến một mình.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/audio.js"></script>
+
 </body>
 </html>
