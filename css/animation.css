@@ -1,1 +1,24 @@
+.scene{
+    opacity:0;
+    transition:opacity 1.5s ease;
+}
 
+.scene.active{
+    opacity:1;
+}
+
+.scene img{
+    animation:slowZoom 10s linear forwards;
+}
+
+@keyframes slowZoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
