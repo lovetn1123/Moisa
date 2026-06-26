@@ -45,16 +45,49 @@ paperSound.play();
 });
 // Khi vào Scene 3, sau 3 giây hiện nút
 const choices = document.getElementById("choices");
-
+const storyText = document.getElementById("storyText");
 const observer = new MutationObserver(() => {
 
     if(document.getElementById("scene3").classList.contains("active")){
 
         choices.classList.remove("show");
 
+        storyText.classList.remove("show");
+
+        // Nhịp 1
+        storyText.innerHTML =
+        "Từ khoảnh khắc này...<br><br>Mọi lựa chọn... sẽ được ta ghi nhớ...";
+
         setTimeout(() => {
-            choices.classList.add("show");
-        },3000);
+            storyText.classList.add("show");
+        },300);
+
+        // Nhịp 2
+        setTimeout(() => {
+
+            storyText.classList.remove("show");
+
+            setTimeout(() => {
+
+                storyText.innerHTML =
+                "Hãy lựa chọn thật cẩn thận.<br><br>Đêm Trăng Tròn không cho cơ hội thứ hai.";
+
+                storyText.classList.add("show");
+
+            },800);
+
+        },3500);
+
+        // Nhịp 3 - Hiện lựa chọn
+        setTimeout(() => {
+
+            storyText.classList.remove("show");
+
+            setTimeout(() => {
+                choices.classList.add("show");
+            },800);
+
+        },7000);
 
     }
 
