@@ -68,6 +68,8 @@ observer.observe(document.getElementById("scene3"),{
 document.getElementById("fearBtn").addEventListener("click",()=>{
 
     showScene("scene4");
+    badEndingSound.currentTime = 0;
+badEndingSound.play();
 
     setTimeout(()=>{
         document.getElementById("badEnding").classList.add("show");
@@ -78,6 +80,8 @@ document.getElementById("fearBtn").addEventListener("click",()=>{
 document.getElementById("joinBtn").addEventListener("click",()=>{
 
     showScene("scene5");
+    goodEndingSound.currentTime = 0;
+goodEndingSound.play();
 
     setTimeout(()=>{
         document.getElementById("goodEnding").classList.add("show");
