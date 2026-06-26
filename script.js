@@ -52,9 +52,21 @@ observer.observe(document.getElementById("scene3"),{
 
 // Chọn kết thúc
 document.getElementById("fearBtn").addEventListener("click",()=>{
+
     showScene("scene4");
+
+    setTimeout(()=>{
+        document.getElementById("badEnding").classList.add("show");
+    },1000);
+
 });
 
 document.getElementById("joinBtn").addEventListener("click",()=>{
+
     showScene("scene5");
+
+    setTimeout(()=>{
+        document.getElementById("goodEnding").classList.add("show");
+    },1000);
+
 });
