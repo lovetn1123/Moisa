@@ -69,8 +69,9 @@ document.getElementById("fearBtn").addEventListener("click",()=>{
 
     showScene("scene4");
     badEndingSound.currentTime = 0;
+badEndingSound.volume = 0.45;
 badEndingSound.play();
-
+    
     setTimeout(()=>{
         document.getElementById("badEnding").classList.add("show");
     },1000);
@@ -81,6 +82,7 @@ document.getElementById("joinBtn").addEventListener("click",()=>{
 
     showScene("scene5");
     goodEndingSound.currentTime = 0;
+goodEndingSound.volume = 0.45;
 goodEndingSound.play();
 
     setTimeout(()=>{
