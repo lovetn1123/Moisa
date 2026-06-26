@@ -33,11 +33,14 @@ paperSound.play();
 
     setTimeout(() => {
 
-        scene2.classList.remove("zoom");
+    scene2.classList.remove("zoom");
 
-        showScene("scene3");
+    showScene("scene3");
 
-    }, 400);
+    wolfSound.currentTime = 0;
+    wolfSound.play();
+
+}, 400);
 
 });
 // Khi vào Scene 3, sau 3 giây hiện nút
