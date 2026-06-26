@@ -117,3 +117,6 @@ html,body{
 #scene3.active img{
     transform:scale(1);
 }
+#scene2{
+    cursor:pointer;
+}
