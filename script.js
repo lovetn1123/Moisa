@@ -29,3 +29,32 @@ document.getElementById("scene2").addEventListener("click", () => {
     }, 400);
 
 });
+// Khi vào Scene 3, sau 3 giây hiện nút
+const choices = document.getElementById("choices");
+
+const observer = new MutationObserver(() => {
+
+    if(document.getElementById("scene3").classList.contains("active")){
+
+        choices.classList.remove("show");
+
+        setTimeout(() => {
+            choices.classList.add("show");
+        },3000);
+
+    }
+
+});
+
+observer.observe(document.getElementById("scene3"),{
+    attributes:true
+});
+
+// Chọn kết thúc
+document.getElementById("fearBtn").addEventListener("click",()=>{
+    showScene("scene4");
+});
+
+document.getElementById("joinBtn").addEventListener("click",()=>{
+    showScene("scene5");
+});
