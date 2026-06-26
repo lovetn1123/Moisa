@@ -100,3 +100,15 @@ html,body{
 #choices button:hover{
     transform:translateY(-3px);
 }
+/* Hiệu ứng Scene 3 */
+
+#scene3 img{
+    transform:scale(1.05);
+    transition:
+        transform .8s ease,
+        opacity .8s ease;
+}
+
+#scene3.active img{
+    transform:scale(1);
+}
