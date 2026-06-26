@@ -70,3 +70,20 @@ document.getElementById("joinBtn").addEventListener("click",()=>{
     },1000);
 
 });
+// ===== Nhạc nền =====
+
+const bgm = document.getElementById("bgm");
+
+function playBackgroundMusic() {
+    bgm.volume = 0.35;
+
+    bgm.play().catch(() => {
+        console.log("Trình duyệt đang chờ người dùng tương tác.");
+    });
+}
+
+// Thử phát khi tải trang
+window.addEventListener("load", playBackgroundMusic);
+
+// Nếu bị chặn, click đầu tiên sẽ phát
+document.addEventListener("click", playBackgroundMusic, { once: true });
