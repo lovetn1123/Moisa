@@ -90,4 +90,4 @@ function playBackgroundMusic() {
     bgm.play().catch(() => {
         console.log("Trình duyệt đang chờ người dùng tương tác.");
     });
-
+}
