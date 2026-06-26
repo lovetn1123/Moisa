@@ -89,6 +89,8 @@ document.getElementById("joinBtn").addEventListener("click",()=>{
 const bgm = document.getElementById("bgm");
 const paperSound = document.getElementById("paperSound");
 const wolfSound = document.getElementById("wolfSound");
+const badEndingSound = document.getElementById("badEndingSound");
+const goodEndingSound = document.getElementById("goodEndingSound");
 function playBackgroundMusic() {
     bgm.volume = 0.35;
 
