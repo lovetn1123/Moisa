@@ -31,3 +31,28 @@ html,body{
     object-fit:cover;
     display:block;
 }
+#hint{
+    position:absolute;
+    left:50%;
+    bottom:40px;
+    transform:translateX(-50%);
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    text-shadow:0 0 12px rgba(0,0,0,.8);
+    animation:hintFloat 1.2s ease-in-out infinite;
+}
+
+@keyframes hintFloat{
+
+    0%,100%{
+        transform:translateX(-50%) translateY(0);
+        opacity:.6;
+    }
+
+    50%{
+        transform:translateX(-50%) translateY(8px);
+        opacity:1;
+    }
+
+}
