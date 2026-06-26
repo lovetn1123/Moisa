@@ -121,3 +121,23 @@ html,body{
 #scene2{
     cursor:pointer;
 }
+.endingText{
+    position:absolute;
+    left:50%;
+    bottom:80px;
+    transform:translateX(-50%);
+
+    color:white;
+    font-size:42px;
+    font-weight:bold;
+
+    text-shadow:0 0 20px rgba(0,0,0,.8);
+
+    opacity:0;
+
+    transition:opacity .8s ease;
+}
+
+.endingText.show{
+    opacity:1;
+}
