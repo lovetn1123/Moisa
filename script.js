@@ -25,7 +25,8 @@ intro.addEventListener("click", () => {
 
 // Bấm vào Scene 2 để mở Scene 3
 document.getElementById("scene2").addEventListener("click", () => {
-
+paperSound.currentTime = 0;
+paperSound.play();
     const scene2 = document.getElementById("scene2");
 
     scene2.classList.add("zoom");
@@ -83,7 +84,7 @@ document.getElementById("joinBtn").addEventListener("click",()=>{
 // ===== Nhạc nền =====
 
 const bgm = document.getElementById("bgm");
-
+const paperSound = document.getElementById("paperSound");
 function playBackgroundMusic() {
     bgm.volume = 0.35;
 
