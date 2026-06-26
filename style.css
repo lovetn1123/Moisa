@@ -112,9 +112,17 @@ html,body{
 
     transition:all .25s ease;
 }
+#fearBtn{
+    opacity:.75;
+}
 
+#joinBtn{
+    opacity:1;
+}
 #choices button:hover{
-    transform:translateY(-3px);
+    transform:translateY(-4px) scale(1.04);
+    background:rgba(255,255,255,.12);
+    border-color:rgba(255,255,255,.7);
 }
 /* Hiệu ứng Scene 3 */
 
