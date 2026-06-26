@@ -5,13 +5,23 @@ function showScene(id) {
     document.getElementById(id).classList.add("active");
 }
 
-// Bắt đầu với Scene 1
-showScene("scene1");
+const intro = document.getElementById("intro");
 
-// Sau 8 giây sang Scene 2
-setTimeout(() => {
-    showScene("scene2");
-}, 8000);
+intro.addEventListener("click", () => {
+
+    playBackgroundMusic();
+
+    intro.classList.add("hide");
+
+    showScene("scene1");
+
+    setTimeout(() => {
+
+        showScene("scene2");
+
+    },8000);
+
+}, { once:true });
 
 // Bấm vào Scene 2 để mở Scene 3
 document.getElementById("scene2").addEventListener("click", () => {
