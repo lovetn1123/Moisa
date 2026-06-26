@@ -53,6 +53,7 @@ html,body{
     font-weight:bold;
     text-shadow:0 0 12px rgba(0,0,0,.8);
     animation:hintFloat 1.2s ease-in-out infinite;
+    pointer-events:none;
 }
 
 @keyframes hintFloat{
