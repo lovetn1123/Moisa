@@ -229,7 +229,7 @@ html,body{
 #storyText{
     position:absolute;
 
-    bottom:170px;
+    bottom:180px;
 
     left:50%;
     transform:translateX(-50%);
