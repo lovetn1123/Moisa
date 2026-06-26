@@ -228,7 +228,9 @@ html,body{
 }
 #storyText{
     position:absolute;
-    top:18%;
+
+    bottom:170px;
+
     left:50%;
     transform:translateX(-50%);
 
@@ -238,11 +240,12 @@ html,body{
 
     color:#e8e2d5;
     font-family:"Marcellus", serif;
-    font-size:30px;
+
+    font-size:28px;
     line-height:1.8;
     letter-spacing:1px;
 
-    text-shadow:0 0 12px rgba(0,0,0,.8);
+    text-shadow:0 0 15px rgba(0,0,0,.95);
 
     opacity:0;
     transition:opacity .8s ease;
