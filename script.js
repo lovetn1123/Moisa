@@ -15,5 +15,17 @@ setTimeout(() => {
 
 // Bấm vào Scene 2 để mở Scene 3
 document.getElementById("scene2").addEventListener("click", () => {
-    showScene("scene3");
+
+    const scene2 = document.getElementById("scene2");
+
+    scene2.classList.add("zoom");
+
+    setTimeout(() => {
+
+        scene2.classList.remove("zoom");
+
+        showScene("scene3");
+
+    }, 400);
+
 });
