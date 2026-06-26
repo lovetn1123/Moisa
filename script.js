@@ -56,7 +56,7 @@ const observer = new MutationObserver(() => {
 
         // Nhịp 1
         storyText.innerHTML =
-        "Từ khoảnh khắc này...<br><br>Mọi lựa chọn... sẽ được ta ghi nhớ...";
+        "Từ khoảnh khắc này...<br>Mọi lựa chọn sẽ được ta ghi nhớ...";
 
         setTimeout(() => {
             storyText.classList.add("show");
@@ -70,7 +70,7 @@ const observer = new MutationObserver(() => {
             setTimeout(() => {
 
                 storyText.innerHTML =
-                "Hãy lựa chọn thật cẩn thận.<br><br>Đêm Trăng Tròn không cho cơ hội thứ hai.";
+                "Hãy lựa chọn thật cẩn thận.<br>Đêm Trăng Tròn không cho cơ hội thứ hai.";
 
                 storyText.classList.add("show");
 
