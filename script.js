@@ -78,16 +78,10 @@ const observer = new MutationObserver(() => {
 
         },3500);
 
-        // Nhịp 3 - Hiện lựa chọn
-        setTimeout(() => {
-
-            storyText.classList.remove("show");
-
-            setTimeout(() => {
-                choices.classList.add("show");
-            },800);
-
-        },7000);
+        // Nhịp 3 - Giữ câu cảnh báo và hiện lựa chọn
+setTimeout(() => {
+    choices.classList.add("show");
+},7000);
 
     }
 
