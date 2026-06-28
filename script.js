@@ -46,6 +46,7 @@ paperSound.play();
 // Khi vào Scene 3, sau 3 giây hiện nút
 const choices = document.getElementById("choices");
 const storyText = document.getElementById("storyText");
+const storyOverlay = document.getElementById("storyOverlay");
 const observer = new MutationObserver(() => {
 
     if(document.getElementById("scene3").classList.contains("active")){
@@ -60,6 +61,7 @@ const observer = new MutationObserver(() => {
 
         setTimeout(() => {
             storyText.classList.add("show");
+            storyOverlay.classList.add("show");
         },300);
 
         // Nhịp 2
@@ -93,7 +95,8 @@ observer.observe(document.getElementById("scene3"),{
 
 // Chọn kết thúc
 document.getElementById("fearBtn").addEventListener("click",()=>{
-
+storyOverlay.classList.remove("show");
+storyText.classList.remove("show");
     showScene("scene4");
     badEndingSound.currentTime = 0;
 badEndingSound.volume = 0.45;
