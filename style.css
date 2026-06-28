@@ -39,7 +39,11 @@ html,body{
     display:block;
     transition:transform .35s ease;
 }
-
+#scene1 img{
+    opacity:0;
+    filter:brightness(.08);
+    animation:moonReveal 6s ease forwards;
+}
 #scene2:hover img{
     transform:scale(1.02);
 }
