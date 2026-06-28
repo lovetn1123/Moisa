@@ -260,3 +260,18 @@ html,body{
 #scene1.reveal{
     filter: brightness(.92);
 }
+#storyOverlay{
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+    transition:opacity .8s ease;
+
+    pointer-events:none;
+}
+
+#storyOverlay.show{
+    opacity:1;
+}
