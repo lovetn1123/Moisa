@@ -254,26 +254,12 @@ html,body{
 #storyText.show{
     opacity:1;
 }
-@keyframes moonReveal{
 
-    0%{
-        opacity:0;
-        filter:brightness(0);
-    }
+#scene1{
+    filter: brightness(0);
+    transition: filter 6s ease;
+}
 
-    20%{
-        opacity:.2;
-        filter:brightness(.15);
-    }
-
-    50%{
-        opacity:.55;
-        filter:brightness(.45);
-    }
-
-    100%{
-        opacity:1;
-        filter:brightness(.92);
-    }
-
+#scene1.reveal{
+    filter: brightness(.92);
 }
