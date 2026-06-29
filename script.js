@@ -22,7 +22,11 @@ intro.addEventListener("click", () => {
     setTimeout(() => {
         scene1.classList.add("reveal");
     }, 50);
-
+setTimeout(() => {
+    arrowSound.currentTime = 0;
+    arrowSound.volume = 0.5; // Có thể chỉnh 0.3–0.7 tùy ý
+    arrowSound.play();
+}, 7000);
     setTimeout(() => {
         showScene("scene2");
     }, 8000);
@@ -133,6 +137,7 @@ const paperSound = document.getElementById("paperSound");
 const wolfSound = document.getElementById("wolfSound");
 const badEndingSound = document.getElementById("badEndingSound");
 const goodEndingSound = document.getElementById("goodEndingSound");
+const arrowSound = document.getElementById("arrowSound");
 function playBackgroundMusic() {
     bgm.volume = 0.35;
 
