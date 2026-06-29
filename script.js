@@ -15,13 +15,19 @@ intro.addEventListener("click", () => {
 
     showScene("scene1");
 
+    const scene1 = document.getElementById("scene1");
+
+    scene1.classList.remove("reveal");
+
     setTimeout(() => {
+        scene1.classList.add("reveal");
+    }, 50);
 
+    setTimeout(() => {
         showScene("scene2");
+    }, 8000);
 
-    },8000);
-
-}, { once:true });
+}, { once: true });
 
 // Bấm vào Scene 2 để mở Scene 3
 document.getElementById("scene2").addEventListener("click", () => {
